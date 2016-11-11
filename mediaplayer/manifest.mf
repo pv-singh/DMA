@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.9.4
+Created-By: 1.8.0_25-b18 (Oracle Corporation)
+Class-Path: lib/commons-cli-1.2.jar lib/commons-io-2.4.jar lib/dom4j-1
+ .6.1.jar lib/jaad-0.8.4.jar lib/jaudiotagger-2.2.2.jar lib/jintellity
+ pe-1.3.9.jar lib/jspeex-0.9.7.jar lib/jspiff-1.0.jar lib/JLargeArrays
+ -1.2.jar lib/JTransforms-3.0.jar lib/laf-plugin-7.3.jar lib/laf-widge
+ t-7.3.jar lib/logback-classic-1.1.2.jar lib/logback-core-1.1.2.jar li
+ b/miglayout-core-4.2.jar lib/miglayout-swing-4.2.jar lib/slf4j-api-1.
+ 7.7.jar lib/substance-7.3.jar lib/trident-7.3.jar lib/tritonus_share.
+ jar lib/xtrememp-audio-spi-flac.jar lib/xtrememp-audio-spi-mpeg.jar l
+ ib/xtrememp-audio-spi-vorbis.jar
+X-COMMENT: Main-Class will be added automatically by build
+Main-Class: xtrememp.XtremeMP

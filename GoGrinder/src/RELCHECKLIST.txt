@@ -1,0 +1,21 @@
+Update copyrights
+Remove/add mode button?  Uncomment loading status?
+Add date and rel # to CHANGELOG
+Update list of legal languages in install.txt
+Remove TODOs that are complete
+Change NUMERIC_VERSION, VERSION_STRING, NUM_VER_STRING
+Change version in iss file
+Do full build - check # of strings
+Run install and test changes
+Upload changes to website - not version file
+Upload to sourceforge
+Test files
+Update version file on website - change tabs to spaces
+Run old version - see updates
+Update freshmeat
+Update bugs/requests on sourceforge
+Send message to mailing list
+Send notification through sf.net
+Update Sensei's Library
+Check in changes
+Create label

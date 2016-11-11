@@ -1,0 +1,158 @@
+Version 1.14 (01/09/2006)
+    New Features:
+    *  New defaultLanguage option to force language
+       selection (see Install.txt)
+    *  Improved flipping and rotating of problems - now 
+       all possible orientations are used
+
+Version 1.13 (11/25/2005)
+    New Features:
+    *  Handles L[] tags
+    *  Updated Portuguese translation
+    *  Added Czech translation
+    
+Version 1.12 (09/10/2005)
+    New Features:
+    *  Handles AB[aa:ac] tags
+    *  Option to disable right-click advance
+
+Version 1.11 (06/26/2005)
+    New Features:
+    *  Can open external SGF editor to edit current problem
+
+Version 1.10 (06/01/2005)
+    New Features:
+    *  Greatly reduced load time for large problem collections
+
+Version 1.09 (04/30/2005)
+    Bug Fixes:
+    *  Fixed French translation
+
+Version 1.08 (04/23/2005)
+    New Features:
+    *  Mousewheel support - tied to Back button
+    *  Translated to French
+    *  Translated to Portugese
+    *  Translated to Spanish
+    *  Translated to Chinese
+
+    Bug Fixes:
+    *  Navigate solution allowed illegal moves
+    *  Newlines in comments are now handled better
+    *  Partial handling of AE tag
+
+Version 1.07 (11/20/2004)
+    New Features:
+    *  Russian strings added
+    *  German strings added
+
+Version 1.06 (09/28/2004)
+    New Features:
+    *  Checks for updates automatically (can be turned off)
+
+    Bug Fixes:
+    *  Marks are centered better on large stones.
+    *  Back button works better now - when moves are played off the end of the
+       variations in the file, back only takes back one stone.
+
+Version 1.05 (09/07/2004)
+    New Features:
+    *  Localization framework in place.
+
+    Bug Fixes:
+    *  Added friendly error if problems dir is not found
+    *  Fixed bug in file chooser
+    *  Fixed exception on new tag -> cancel
+    *  Fixed sizing of main window and selection dialog
+    *  Fixed ArrayOutOfBoundsException when board is 9x9 and window is large.
+
+Version 1.04 (08/27/04)
+    New Features:
+    *  Added help button
+    *  Added Find Problem
+
+    Bug Fixes:
+    *  Fixed problem when board area width much greater than height
+    *  Optimized ghost painting
+    *  Nodes added while navigating solution no longer show up when solving
+    *  Random order solved some problems twice
+
+Version 1.03 (08/24/04)
+    New Features:
+    *  Added support for triangles marking wrong variations
+
+    Bug Fixes:
+    *  Version parsing bug fixed
+    *  Fixed sound locking problem (I hope)
+
+Version 1.00 (08/21/04)
+    New Features:
+    *  Sounds
+    *  Improved resizing on SelectionDialog
+    *  Added version check at startup
+    *  Added ReloadDialog to show status while reloading problems
+    *  When SGF parse fails, skips to next problem
+    *  Improved parse exception messages
+    *  Install now overwrites KGA problems
+    *  Asks about overwriting problems while splitting file
+    *  Cancelling operations that create problems no longer causes collection
+       to be reloaded
+
+    Bug Fixes:
+    *  Added check that all points are within board bounds
+    *  Better handling of nodes without moves
+    *  Fixed bug in getBounds
+    *  Fixed exception on loss of selection
+
+Version 0.95 (08/16/04)
+    New Features:
+    *  High score handling improved
+    *  Ability to load and save state
+    *  Improved splash screen
+
+    Bug Fixes:
+    *  Selecting collections that have an ancestor/descendant relationship
+       no longer allowed
+
+Version 0.93 (08/13/04)
+    New Features:
+    *  Added autoadvance option to preferences (still on toolbar, too)
+    *  Added keyboard shortcuts for previous and next problem
+    *  About box now displays Java version
+    *  Added ability to remove tags from all problems
+    *  Added splashscreen image
+    *  Added option to show 'Wrong' at first mistake
+    *  Improved resizing behavior in main window
+    *  Added icon to exe and JFrames
+
+    Bug Fixes:
+    *  No known bugs
+
+Version 0.92 (08/11/2004)
+    New Features:
+    * Added documentation to install and website
+    * Changed colors
+    * Added ability to extract and sort problems from goproblems.com
+    * Added progress dialog for long operations
+    * Changed dialog centering
+
+    Bug Fixes:
+    * No known bugs :)
+
+Version 0.91 (08/08/2004)
+    New Features:
+    * Added CHANGELOG.txt
+    * Added support for X markup in SGF
+    * Added option to turn color flipping on/off
+    * Added image to about dialog
+    * Added option to turn ghost on/off
+    * Added settings dialog
+    
+    Bug Fixes:
+    * High Scores for collections of collections were broken.
+    * Fixed install bug - working directory wasn't set on shortcuts
+    * Changed install to not overwrite, and not uninstall problems, stats, and
+      grind.dat if already present.
+
+Version 0.90 (08/05/2004):
+    Initial Release

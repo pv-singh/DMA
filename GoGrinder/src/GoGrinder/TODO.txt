@@ -1,0 +1,76 @@
+SGF:
+First XXQJ prob - weird sizing thing
+Better problem collection
+Create automatic test?
+Handle multi-record problem files
+
+WGF:
+Tutorial -> problem -> tutorial
+Handle hotkeys changing node
+On edit WGF, disable other buttons
+on end edit mode, switch back to HTML view
+Grey square? stone?
+lines
+Show difference between stone types?
+Way of controlling next page
+Set board split
+Set ignore moves
+Editing tests
+Tree of nodes?
+Open with no file
+
+Refactor board?
+Conserve memory by not creating uneccessary ArrayLists, or by defaulting to smaller size?
+Label numbering doesn't work with multiple LB tags
+Watch for butting or pushing - alignment
+In 14-15k game, white breaks out - circle and triangle on same point
+Grouse image
+
+Jump into middle of other game record?
+Handle mouse wheel in WGF?
+
+YX - [0] Initalize failure lists or [1] tally the failure
+  You got 79% right.  Here are your most common mistakes:
+  3: Take sente
+  1: Don't bend against stronger stones
+  1: Yo mama
+
+XN - subsections?
+
+Pre-release:
+Check dirty bit
+Every way to leave a node must update comment
+Check menu and toolbar in sync
+Update screenshots
+Change extension - remove WGFs
+Switch to release build?
+If no grind.dat, open my go tutorial by default
+Fix flicker on load wgf file
+Minimum heap size
+Remove println, equals in node.getproplist
+Check memory leaks
+Test heavily
+Doc/website update
+Redo strings
+Throw exception when board.move is oorange?
+
+If BW release:
+Fix test with line and point
+Handle multiple files
+
+Document hotkeys better
+Think about default tags when switching languages
+
+Add page explaining language settings?
+Prevent skipping when all problems in selection are bad
+
+Long term:
+Include go tutorial with interactive problems?
+Editor that generates trees for same position
+Make player solve all variations
+Animate solution
+Organizer features - see SGF organizer
+Replay entire games as problems - way of skipping, rectangle hints like uliGo?
+check out igowalker
+Creating problems, include minimax pruning
+User profiles?

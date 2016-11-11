@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir=".." default="all" name="GoGrinder">
+    <target name="init">
+        <property location="." name="classes.dir"/>
+        <property location="." name="src.dir"/>
+        <property location="GoGrinder/doc/api" name="javadoc.dir"/>
+        <property name="project.name" value="${ant.project.name}"/>
+        <property location="install/image/GoGrinder.jar" name="jar"/>
+        <property environment="env"/>
+    </target>
+
+    <target depends="init" name="compile">
+        <!-- Both srcdir and destdir should be package roots. -->
+        <mkdir dir="${classes.dir}"/>
+        <javac debug="true" deprecation="true" destdir="${classes.dir}" srcdir="${src.dir}">
+            <classpath>
+                <pathelement location="install/image/com.ice.tar.jar"/>
+                <pathelement location="install/image/ostermillerutils_1_04_00.jar"/>
+            </classpath>
+            <include name="GoGrinder/**"/>
+        </javac>
+        
+        <java classname="GoGrinder.tests.StringChecker"
+              fork="true"
+              failonerror="true"
+              output="stringcheck.log"
+              logError="true">
+         <classpath>
+           <pathelement path="."/>
+         </classpath>
+       </java>
+    </target>
+
+    <target depends="init,compile" name="jar">
+        <!-- To make a standalone app, insert into <jar>: -->
+        <manifest file="GoGrinder/MANIFEST.MF">
+            <attribute name="Main-Class" value="GoGrinder.Main"/>
+            <attribute name="Class-Path" value="com.ice.tar.jar ostermillerutils_1_04_00.jar"/>
+        </manifest>
+        <jar basedir="${classes.dir}" compress="true" jarfile="${jar}" manifest="GoGrinder/MANIFEST.MF">
+            <include name="GoGrinder/**"/>
+        </jar>
+        <delete file="GoGrinder/MANIFEST.MF"/>
+    </target>
+    
+    <target depends="init,compile,jar" name="makeinstallimage">
+        <concat destfile="install/image/docs/docs.html">
+            <filelist dir="website" files="header.php"/>
+            <filelist dir="website" files="docs.php"/>
+            <filelist dir="website" files="footer.php"/>
+        </concat>
+        
+        <copy todir="install/image/docs">
+            <fileset dir="website" casesensitive="yes">
+                <include name="About.png"/>
+                <include name="AutoAdv.png"/>
+                <include name="Banner.png"/>
+                <include name="Edit.png"/>
+                <include name="Extract.png"/>
+                <include name="Find.png"/>
+                <include name="Help.png"/>
+                <include name="Import.png"/>
+                <include name="NextProb.png"/>
+                <include name="Open.png"/>
+                <include name="Prefs.png"/>
+                <include name="PrevProb.png"/>
+                <include name="Save.png"/>
+                <include name="SelProbs.png"/>
+                <include name="Split.png"/>
+            </fileset>
+        </copy>
+        
+        <taskdef name="jsmoothgen"
+                 classname="net.charabia.jsmoothgen.ant.JSmoothGen"
+                 classpath="${env.JSMOOTH_HOME}/lib/jsmoothgen-ant.jar"/>
+        
+        <jsmoothgen project="install/GoGrinder.jsmooth"
+                    skeletonroot="${env.JSMOOTH_HOME}/skeletons"/>
+        
+        <property name="iscc.path" location="${env.INNOSETUP_HOME}/ISCC.exe"/>
+        <echo message="Building installer..."/>
+        <exec dir="install"
+              executable="${iscc.path}"
+              failonerror="true"
+              output="install/innosetup.log">
+            <arg line="GoGrinder.iss"/>
+        </exec>
+        
+        <zip destfile="install/Output/GoGrinder-X-full.zip">
+            <zipfileset dir="install/image" includes="docs/** problems/** *.txt *.jar grind.dat"/>
+        </zip>
+        
+        <zip destfile="install/Output/GoGrinder-X-upgrade.zip">
+            <zipfileset dir="install/image" includes="docs/** problems/** *.txt *.jar"/>
+        </zip>
+    </target>
+
+    <target depends="init,jar,makeinstallimage" description="Build everything." name="all"/>
+
+    <target depends="init" description="Clean all build products." name="clean">
+        <delete>
+            <fileset dir="${classes.dir}/GoGrinder" includes="**/*.class"/>
+        </delete>
+        <delete dir="${javadoc.dir}"/>
+        <delete file="${jar}"/>
+    </target>
+
+</project>

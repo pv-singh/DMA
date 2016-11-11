@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Rsrc-Class-Path: ./ org.apache.commons.collections.jar org-apache-comm
+ ons-logging.jar commons-collections-testframework-3.2.1.jar junit.jar
+  junit_35.jar hamcrest-all-1.3.jar
+Class-Path: .
+Rsrc-Main-Class: MainBF
+Main-Class: org.eclipse.jdt.internal.jarinjarloader.JarRsrcLoader
+
