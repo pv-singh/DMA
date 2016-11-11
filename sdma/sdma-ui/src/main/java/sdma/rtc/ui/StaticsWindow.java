@@ -125,7 +125,7 @@ public class StaticsWindow extends JFrame implements ActionListener{
           
         //This data needs to be written (Object[])
         Map<String, Object[]> data = new TreeMap<String, Object[]>();
-        data.put("1", new Object[] {"Class Name", "Class EC", "Method EC","Message EC","Class IC", "Method IC","Message IC"});
+        data.put("1", new Object[] {"Class Name", "Class Export_Coupling", "Method Export_Coupling","Message Export_Coupling","Class Import_Coupling", "Method Import_Coupling","Message Import_Coupling"});
         int i=2;
         
         Iterator<String> keys=clsEC.keySet().iterator();

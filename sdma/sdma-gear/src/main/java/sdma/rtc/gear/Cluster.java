@@ -197,7 +197,7 @@ public class Cluster {
 
 			// if parent class is not null
 			if (parentClass != null) {
-				// if out coupling exist in over all data
+				// if Export Coupling exist in over all data
 				if (OADS.get(parentClass) != null) {
 					// get out coupled classes
 					if ((outCoupling = OADS.get(parentClass)) != null) {
@@ -207,7 +207,7 @@ public class Cluster {
 						classFound = false;
 						methodFound = false;
 
-						// get out coupling classes
+						// get Export Coupling classes
 						if (outCoupling.getOutCoupling() != null) {
 
 							// for each class update coupling based on input
@@ -261,59 +261,59 @@ public class Cluster {
 							// exist
 						} else if (classFound) {
 							// add child node method for class that is found in
-							// out coupling
+							// Export Coupling
 							List<MethodCtx> lis = new ArrayList<MethodCtx>();
 							lis.add(new MethodCtx(childMethod, 1));
-							// set methods of corresponding out coupling class
+							// set methods of corresponding Export Coupling class
 							outCoupling.getOutCoupling().get(classLoc)
 									.setMethodCtxs(lis);
 
-							// if neither class nor method found in out coupling
+							// if neither class nor method found in Export Coupling
 						} else {
-							// add child node method in out coupling
+							// add child node method in Export Coupling
 							List<MethodCtx> lis = new ArrayList<MethodCtx>();
 							lis.add(new MethodCtx(childMethod, 1));
-							// add a new child node class in out coupling
+							// add a new child node class in Export Coupling
 							ClassCtx classCtx = new ClassCtx(childClass, lis);
 
-							// initialize out coupling class when found null
+							// initialize Export Coupling class when found null
 							if (outCoupling.getOutCoupling() == null)
 								outCoupling
 										.setOutCoupling(new ArrayList<ClassCtx>());
 
-							// add class to out coupling list
+							// add class to Export Coupling list
 							outCoupling.getOutCoupling().add(classCtx);
 						}
 						if(parentClass.endsWith("command/Command")){
 							System.out.println("Inside Block 4");
 						}
-						// set out coupling for parent class
+						// set Export Coupling for parent class
 						OADS.put(parentClass, outCoupling);
 						UPDS.put(parentClass, outCoupling);
 					}else{
 						outCoupling = new Coupling();
-						// add child node method in out coupling
+						// add child node method in Export Coupling
 						List<MethodCtx> lis = new ArrayList<MethodCtx>();
 						lis.add(new MethodCtx(childMethod, 1));
-						// add a new child node class in out coupling
+						// add a new child node class in Export Coupling
 						ClassCtx classCtx = new ClassCtx(childClass, lis);
 
-						// initialize out coupling class when found null
+						// initialize Export Coupling class when found null
 						if (outCoupling.getOutCoupling() == null)
 							outCoupling
 									.setOutCoupling(new ArrayList<ClassCtx>());
 
-						// add class to out coupling list
+						// add class to Export Coupling list
 						outCoupling.getOutCoupling().add(classCtx);
 						if(parentClass.endsWith("command/Command")){
 							System.out.println("Inside Block 3");
 						}
-						// set out coupling for parent class
+						// set Export Coupling for parent class
 						OADS.put(parentClass, outCoupling);
 						UPDS.put(parentClass, outCoupling);
 					}
 				} else {
-					// initialize out coupling and add out coupling method and
+					// initialize Export Coupling and add Export Coupling method and
 					// class for it
 					outCoupling = new Coupling(null, new ArrayList<ClassCtx>(),
 							parentClass);
@@ -323,7 +323,7 @@ public class Cluster {
 
 					ClassCtx classCtx = new ClassCtx(childClass, lis);
 
-					// initialize out coupling class list
+					// initialize Export Coupling class list
 					outCoupling.setOutCoupling(new ArrayList<ClassCtx>());
 
 					// add node class coupling
@@ -331,15 +331,15 @@ public class Cluster {
 					if(parentClass.endsWith("command/Command")){
 						System.out.println("Inside Block 2");
 					}
-					// set out coupling for parent class
+					// set Export Coupling for parent class
 					OADS.put(parentClass, outCoupling);
 					UPDS.put(parentClass, outCoupling);
 				}
 
-				// same process as followed for out coupling here is for in
+				// same process as followed for Export Coupling here is for in
 				// coupling
 
-				// if in coupling exist in over all data
+				// if Import Coupling exist in over all data
 				if (OADS.get(childClass) != null) {
 					if ((inCoupling = OADS.get(childClass)) != null) {
 						// reset

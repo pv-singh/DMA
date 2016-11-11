@@ -86,8 +86,8 @@ public class SenerioWindow extends JFrame implements Runnable, MouseListener,
 		this.setLayout(null);
 
 		classNameLb = new JLabel("Class Name");
-		inCouplingLb = new JLabel("In Coupling");
-		outCouplingLb = new JLabel("Out Coupling");
+		inCouplingLb = new JLabel("Import Coupling");
+		outCouplingLb = new JLabel("Export Coupling");
 
 		stopBt = new JButton("Stop");
 		clearBt = new JButton("Clear");

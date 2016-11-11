@@ -379,11 +379,11 @@ public class AnalysisWindow extends JFrame implements ActionListener {
 						if (coupling == null) {
 							coupling = UPDC.get(clsName);
 							coupling.setClassName(clsName);
-							System.out.println("Added Value ...."+coupling.getMessageScope(1)+" IC\n\n\n");
+							System.out.println("Added Value ...."+coupling.getMessageScope(1)+" Import_Coupling\n\n\n");
 							dataset2.addValue(coupling.getMessageScope(1),
-									"IC", refineClass(clsName));
+									"Import_Coupling", refineClass(clsName));
 							dataset2.addValue(coupling.getMessageScope(2),
-									"EC", refineClass(clsName));
+									"Export_Coupling", refineClass(clsName));
 							totalClassCount = totalClassCount + 1;
 							if (totalClassCount * 20 > chartPanel2.getSize()
 									.getHeight()) {
@@ -403,9 +403,9 @@ public class AnalysisWindow extends JFrame implements ActionListener {
 							if (oldCouple != null) {
 								oldCouple.setClassName(clsName);
 								dataset2.setValue(coupling.getMessageScope(1),
-										"IC", refineClass(clsName));
+										"Import_Coupling", refineClass(clsName));
 								dataset2.setValue(coupling.getMessageScope(2),
-										"EC", refineClass(clsName));
+										"Export_Coupling", refineClass(clsName));
 							}
 						}
 					}

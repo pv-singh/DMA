@@ -32,13 +32,13 @@ public class Coupling implements Serializable, Cloneable {
 			/*System.out
 					.println("---------------------------------------------------");
 			System.out.println("Class : " + oldCoupling.getClassName());
-			System.out.println("----Out Coupling---");
+			System.out.println("----Export Coupling---");
 			System.out.println("Class Level : " + oldCoupling.getClassScope(2));
 			System.out.println("Method Level : "
 					+ oldCoupling.getMethodScope(2));
 			System.out.println("Message Level : "
 					+ oldCoupling.getMessageScope(2));
-			System.out.println("----In Coupling---");
+			System.out.println("----Import Coupling---");
 			System.out.println("Class Level : " + oldCoupling.getClassScope(1));
 			System.out.println("Method Level : "
 					+ oldCoupling.getMethodScope(1));
@@ -50,11 +50,11 @@ public class Coupling implements Serializable, Cloneable {
 			System.out
 					.println("---------------------------------------------------");
 			System.out.println("Class : " + this.getClassName());
-			System.out.println("----Out Coupling---");
+			System.out.println("----Export Coupling---");
 			System.out.println("Class Level : " + this.getClassScope(2));
 			System.out.println("Method Level : " + this.getMethodScope(2));
 			System.out.println("Message Level : " + this.getMessageScope(2));
-			System.out.println("----In Coupling---");
+			System.out.println("----Import Coupling---");
 			System.out.println("Class Level : " + this.getClassScope(1));
 			System.out.println("Method Level : " + this.getMethodScope(1));
 			System.out.println("Message Level : " + this.getMessageScope(1));
@@ -62,7 +62,7 @@ public class Coupling implements Serializable, Cloneable {
 					.println("---------------------------------------------------");*/
 			balanceCoupling = new Coupling();
 			balanceCoupling.setClassName(oldCoupling.getClassName());
-			// for in coupling
+			// for Import Coupling
 			if (oldCoupling.getInCoupling() != null) {
 				List<ClassCtx> clsOldCoupling = oldCoupling.getInCoupling();
 				int cs = clsOldCoupling.size();
@@ -113,7 +113,7 @@ public class Coupling implements Serializable, Cloneable {
 				balanceCoupling.setInCoupling(inCoupling);
 			}
 
-			// for out coupling
+			// for Export Coupling
 			if (oldCoupling.getOutCoupling() != null) {
 				List<ClassCtx> clsOldCoupling = oldCoupling.getOutCoupling();
 				int cs = clsOldCoupling.size();
@@ -199,13 +199,13 @@ public class Coupling implements Serializable, Cloneable {
 			System.out
 					.println("----------------Bar Balance Coupling-----------------------------------");
 			System.out.println("Class : " + oldCoupling.getClassName());
-			System.out.println("----Out Coupling---");
+			System.out.println("----Export Coupling---");
 			System.out.println("Class Level : " + oldCoupling.getClassScope(2));
 			System.out.println("Method Level : "
 					+ oldCoupling.getMethodScope(2));
 			System.out.println("Message Level : "
 					+ oldCoupling.getMessageScope(2));
-			System.out.println("----In Coupling---");
+			System.out.println("----Import Coupling---");
 			System.out.println("Class Level : " + oldCoupling.getClassScope(1));
 			System.out.println("Method Level : "
 					+ oldCoupling.getMethodScope(1));
@@ -217,11 +217,11 @@ public class Coupling implements Serializable, Cloneable {
 			System.out
 					.println("---------------------------------------------------");
 			System.out.println("Class : " + this.getClassName());
-			System.out.println("----Out Coupling---");
+			System.out.println("----Export Coupling---");
 			System.out.println("Class Level : " + this.getClassScope(2));
 			System.out.println("Method Level : " + this.getMethodScope(2));
 			System.out.println("Message Level : " + this.getMessageScope(2));
-			System.out.println("----In Coupling---");
+			System.out.println("----Import Coupling---");
 			System.out.println("Class Level : " + this.getClassScope(1));
 			System.out.println("Method Level : " + this.getMethodScope(1));
 			System.out.println("Message Level : " + this.getMessageScope(1));
@@ -229,7 +229,7 @@ public class Coupling implements Serializable, Cloneable {
 					.println("---------------------------------------------------");
 			balanceCoupling = new Coupling();
 			balanceCoupling.setClassName(oldCoupling.getClassName());
-			// for in coupling
+			// for Import Coupling
 			if (oldCoupling.getInCoupling() != null) {
 				List<ClassCtx> clsOldCoupling = oldCoupling.getInCoupling();
 				int cs = clsOldCoupling.size();
@@ -280,7 +280,7 @@ public class Coupling implements Serializable, Cloneable {
 				balanceCoupling.setInCoupling(inCoupling);
 			}
 
-			// for out coupling
+			// for Export Coupling
 			if (oldCoupling.getOutCoupling() != null) {
 				List<ClassCtx> clsOldCoupling = oldCoupling.getOutCoupling();
 				int cs = clsOldCoupling.size();

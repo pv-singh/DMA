@@ -38,7 +38,7 @@ public class ClassTimeChart extends Panel {
 
 	// Time gap interval
 	private Double timeInterval = 600000.0;
-	// time series for out coupling
+	// time series for Export Coupling
 	private List<Coupling> couplings = null;
 
 	// date set collection
@@ -65,8 +65,8 @@ public class ClassTimeChart extends Panel {
 		this.className = className;
 		// intialize and add series to dataset
 		dataset1 = new TimePeriodValuesCollection();
-		dataset1.addSeries(new TimePeriodValues("Out Coupling"));
-		dataset1.addSeries(new TimePeriodValues("In Coupling"));
+		dataset1.addSeries(new TimePeriodValues("Export Coupling"));
+		dataset1.addSeries(new TimePeriodValues("Import Coupling"));
 
 		dataset2 = new DefaultCategoryDataset();
 
@@ -131,9 +131,9 @@ public class ClassTimeChart extends Panel {
 		if (nextProcess <= size) {
 			Coupling balanceCoupling = processSlot(couplings.size());
 			dataset2.addValue(balanceCoupling.getMessageScope(2)
-					+ balanceCoupling.getMessageScope(2), "EC", nextProcess + "");
+					+ balanceCoupling.getMessageScope(2), "Export_Coupling", nextProcess + "");
 			dataset2.addValue(balanceCoupling.getMessageScope(1)
-					+ balanceCoupling.getMessageScope(1), "IC", nextProcess + "");
+					+ balanceCoupling.getMessageScope(1), "Import_Coupling", nextProcess + "");
 			
 			chartPanel2.validate();
 			lastProcess++;
@@ -180,7 +180,7 @@ public class ClassTimeChart extends Panel {
 							}
 						}
 					} else {
-						buffer.append("IC=0");
+						buffer.append("Import_Coupling=0");
 					}
 					buffer.append("</body></html/>");
 				} else {
@@ -205,7 +205,7 @@ public class ClassTimeChart extends Panel {
 									buffer.append("No Methods<br>");
 								}
 							} else {
-								buffer.append("EC=0");
+								buffer.append("Export_Coupling=0");
 							}
 						}
 					}
