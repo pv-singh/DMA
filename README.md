@@ -1,0 +1,12 @@
+#1 INSTRUCTIONS TO SETUP CLIENT ()
+
+a. Download eclipse from eclipse from "eclipse.org"
+b. Install Eclipse
+c. Goto window-> show view -> Others -> Git -> Git repository
+d. From git repository panel, click clone Git repository
+e. Paste "https://github.com/pv-singh/DMA.git" when prompted for url
+f. Click next and then finish
+g. Create a new project by importing existing maven project form the downloaded git repository (SDMA)
+h. right click SDMA in package explorer and click maven clean
+i. right click SDMA in package explorer and click maven install   
+                          
