@@ -160,7 +160,7 @@ public class ConfigEnvironment extends JFrame implements ActionListener {
 		int result = fileChooser.showOpenDialog(this);
 		if (result == JFileChooser.APPROVE_OPTION) {
 			File selectedFile = fileChooser.getSelectedFile();
-			scalsBaseDirTf.setText(selectedFile.getAbsolutePath() + "/JP2A/");
+			scalsBaseDirTf.setText(selectedFile.getAbsolutePath() + "/");
 
 		}
 	}

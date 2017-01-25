@@ -483,7 +483,7 @@ public class Server {
 						Thread.sleep(500);
 					}
 					totalLatency = +maxTime;
-					System.out.println("Latency  " + totalLatency);
+					//System.out.println("Latency  " + totalLatency);
 				} catch (UnknownHostException e) {
 					e.printStackTrace();
 				} catch (SocketException e) {

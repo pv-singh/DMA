@@ -84,7 +84,7 @@ public class StaticsWindow extends JFrame implements ActionListener{
 		avgLatencyLb = new JLabel("Average Latency : " + avgLatency);
 		responseTimeLb = new JLabel("Respnse Time : " + responseTime);
 		executionTimeLb = new JLabel("Execution Time : " + executionTime);
-		exportBt = new JButton("Export");
+		exportBt = new JButton("Export to Excel");
 
 		totalPacksLb.setBounds(50, 25, 400, 25);
 		totalClassesLb.setBounds(50, 50, 400, 25);
@@ -121,11 +121,11 @@ public class StaticsWindow extends JFrame implements ActionListener{
         XSSFWorkbook workbook = new XSSFWorkbook(); 
          
         //Create a blank sheet
-        XSSFSheet sheet = workbook.createSheet("Employee Data");
+        XSSFSheet sheet = workbook.createSheet("Dynamic Metric Data");
           
         //This data needs to be written (Object[])
         Map<String, Object[]> data = new TreeMap<String, Object[]>();
-        data.put("1", new Object[] {"Class Name", "Class Export_Coupling", "Method Export_Coupling","Message Export_Coupling","Class Import_Coupling", "Method Import_Coupling","Message Import_Coupling"});
+        data.put("1", new Object[] {"Class Name", "EC_CC", "EC_CM","EC_CD","IC_CC", "IC_CM","IC_CD"});
         int i=2;
         
         Iterator<String> keys=clsEC.keySet().iterator();
@@ -155,10 +155,10 @@ public class StaticsWindow extends JFrame implements ActionListener{
         try
         {
             //Write the workbook in file system
-            FileOutputStream out = new FileOutputStream(new File("/home/harkomal/howtodoinjava_demo.xlsx"));
+            FileOutputStream out = new FileOutputStream(new File("/root/jp2/Analysis_Report.xlsx"));
             workbook.write(out);
             out.close();
-            System.out.println("howtodoinjava_demo.xlsx written successfully on disk.");
+            System.out.println("Analysis_Report.xlsx written successfully on disk.");
         } 
         catch (Exception e) 
         {

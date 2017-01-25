@@ -1,5 +1,5 @@
-﻿# /bin/sh
-export JAVA_HOME=/home/amit/Softwares/jdk1.8.0_101/
+#! /bin/sh
+export JAVA_HOME=/home/amit/jdk1.8.0_101
 JAVACMD="$JAVA_HOME/bin/java"
 $JAVACMD -javaagent:lib/jborat-agent.jar \
  -noverify \
