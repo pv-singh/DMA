@@ -155,7 +155,7 @@ public class StaticsWindow extends JFrame implements ActionListener{
         try
         {
             //Write the workbook in file system
-            FileOutputStream out = new FileOutputStream(new File("/root/jp2/Analysis_Report.xlsx"));
+            FileOutputStream out = new FileOutputStream(new File("/root/jp2/Analysis_Report"+System.currentTimeMillis()+ ".xlsx"));
             workbook.write(out);
             out.close();
             System.out.println("Analysis_Report.xlsx written successfully on disk.");
